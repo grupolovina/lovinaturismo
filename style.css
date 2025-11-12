@@ -1,0 +1,659 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  /* background-image: url('./img/fundolovinaturismo.png'); */
+  background: radial-gradient(circle, #272d6bff 0%, #10143e 100%);
+  color: #e1e1f1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Outfit", sans-serif;
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+  gap: 1rem;
+  background-repeat: no-repeat; /* Evita a repetição da imagem */
+  background-position: top center; /* Centraliza a imagem horizontal e verticalmente */
+}
+
+@font-face {
+  font-family: 'Laviossa-Medium'; /* Defina o nome da sua fonte */
+  src: url('./fonts/Laviossa-Medium.otf') format('truetype'); /* Caminho para o arquivo .ttf */
+  font-weight: normal; /* Peso da fonte */
+  font-style: normal;  /* Estilo da fonte */
+}
+
+@font-face {
+  font-family: "Bropella"; /* Defina o nome da sua fonte */
+  src: url("./fonts/Bropella.ttf") format("truetype"); /* Caminho para o arquivo .ttf */
+  font-weight: normal; /* Peso da fonte */
+  font-style: normal; /* Estilo da fonte */
+}
+
+@font-face {
+  font-family: "Montserrat"; /* Defina o nome da sua fonte */
+  src: url("./fonts/Montserrat.ttf") format("truetype"); /* Caminho para o arquivo .ttf */
+  font-weight: normal; /* Peso da fonte */
+  font-style: normal; /* Estilo da fonte */
+}
+
+@font-face {
+  font-family: "Fredoka"; /* Defina um nome único para a segunda fonte */
+  src: url("./fonts/Fredoka.ttf") format("truetype"); /* Caminho para o arquivo da segunda fonte */
+  font-weight: normal; /* Defina o peso da fonte, ajuste se necessário */
+  font-style: normal; /* Defina o estilo da fonte, ajuste se necessário */
+}
+
+@font-face {
+  font-family: "neulis-black"; /* Defina um nome único para a segunda fonte */
+  src: url("./fonts/neulis-black.otf") format("truetype"); /* Caminho para o arquivo da segunda fonte */
+  font-weight: normal; /* Defina o peso da fonte, ajuste se necessário */
+  font-style: normal; /* Defina o estilo da fonte, ajuste se necessário */
+}
+
+.bg-text-animation {
+  position: absolute;
+  top: 5rem;
+  font-size: 12rem;
+  text-transform: uppercase;
+  font-weight: 900;
+  -webkit-text-stroke: 2px #00a8eb;
+  -webkit-text-fill-color: transparent;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  z-index: -1;
+  user-select: none;
+}
+
+.my-photo {
+  width: 10rem;
+  border-radius: 50%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: top;
+  border: 2px solid #f0f2f6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.sosmed i {
+  font-size: 1.5rem;
+  color: #f0f2f6;
+}
+
+.sosmed i:hover {
+  color: white;
+}
+
+.sosmed a:not(:last-child) {
+  margin-right: 1rem;
+}
+
+ul {
+  width: 80%;
+  max-width: 40rem;
+}
+
+ul li {
+  list-style: none;
+}
+
+ul.links li:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.slogan {
+  text-align: center;
+  color: #f0f2f6;
+  font-family: "Fredoka", sans-serif;
+  color: #f0f2f6;
+}
+
+.tituloft {
+  text-align: center;
+  color: #f0f2f6;
+  font-family: "Laviossa-Medium", sans-serif;
+  font-size: 30px;
+  letter-spacing: 1px;
+}
+
+.links {
+  margin-top: 1rem;
+}
+
+.link-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #10143e;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 20px;
+  box-shadow: 8px 10px 0 #020e13;
+  border: 2px solid #f0f2f6;
+}
+
+.icone-grande {
+  font-size: 1.5rem;
+  color: #f0f2f6;
+}
+
+.link-card:hover {
+  border: 2px solid white;
+}
+
+.logosgf img {
+  width: 1px;
+  height: 1px;
+}
+
+.links .link-text {
+  text-align: center;
+  flex-grow: 1;
+  color: #f0f2f6;
+  /*font-family:'neulis-black', sans-serif;*/
+  font-family: "Bropella", sans-serif;
+  font-size: 20px;
+}
+
+.link-action {
+  color: #f0f2f6;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.copyright {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: #f0f2f6;
+  font-size: 0.75rem;
+  font-family: "Fredoka", sans-serif;
+}
+
+.copyright img {
+  width: 13rem;
+  /*opacity: 0.4;*/
+}
+
+#toast {
+  width: max-content;
+  position: fixed;
+  top: 0;
+}
+
+.toast-container {
+  background-color: white;
+  color: #0f0f25;
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 1rem;
+  animation: muncul 300ms ease-in-out;
+}
+
+.toast-gone {
+  animation: hilang 1s ease-in-out 1s;
+}
+
+@keyframes muncul {
+  from {
+    opacity: 0;
+    transform: translateY(-4rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hilang {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* Estilos para os carrosséis */
+
+/* Container principal dos carrosséis */
+.carousels-section {
+  width: 90%;
+  max-width: 1200px;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
+
+/* Container individual de cada carrossel */
+.carousel-container {
+  margin-bottom: 4rem;
+}
+
+/* Título do carrossel com fonte Bropella */
+.carousel-title {
+  font-family: "Bropella", sans-serif;
+  font-size: 28px;
+  color: #f0f2f6;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+}
+
+/* Estrutura do carrossel */
+.carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Container da track do carrossel */
+.carousel-track-container {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 20px;
+  position: relative;
+}
+
+/* Track que contém as imagens */
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+
+/* Item individual do carrossel */
+.carousel-item {
+  min-width: 100%;
+  height: 400px;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+/* Imagem do carrossel - sempre cobre toda a área */
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-radius: 20px;
+}
+
+/* Botões de navegação (setas) */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(73, 191, 180, 0.8);
+  border: 2px solid #fcfadc;
+  color: #fcfadc;
+  font-size: 2rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.carousel-btn:hover {
+  background-color: rgba(73, 191, 180, 1);
+  border-color: white;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-btn-prev {
+  left: 10px;
+}
+
+.carousel-btn-next {
+  right: 10px;
+}
+
+/* Dots de navegação */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 1rem;
+}
+
+.carousel-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(252, 250, 220, 0.4);
+  border: 2px solid #fcfadc;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.carousel-dot.active {
+  background-color: #49bfb4;
+  transform: scale(1.3);
+}
+
+.carousel-dot:hover {
+  background-color: rgba(73, 191, 180, 0.7);
+}
+
+/* Modal para imagem expandida */
+.carousel-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-modal.active {
+  display: flex;
+}
+
+.carousel-modal-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.carousel-modal-img {
+  max-width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+  border-radius: 20px;
+  filter: brightness(0.7);
+}
+
+.carousel-modal-btn {
+  background-color: #49bfb4;
+  color: #fcfadc;
+  font-family: "Bropella", sans-serif;
+  font-size: 20px;
+  padding: 1rem 2.5rem;
+  border: 2px solid #f05936;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 8px 10px 0 #020e13;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.carousel-modal-btn:hover {
+  border-color: white;
+  transform: translateY(-2px);
+  box-shadow: 10px 12px 0 #020e13;
+}
+
+/* Responsividade para tablets */
+@media (max-width: 768px) {
+  .carousel-title {
+    font-size: 24px;
+  }
+
+  .carousel-item {
+    height: 300px;
+  }
+
+  .carousel-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+  }
+
+  .carousel-modal-btn {
+    font-size: 18px;
+    padding: 0.8rem 2rem;
+  }
+}
+
+/* Responsividade para mobile */
+@media (max-width: 480px) {
+  .carousels-section {
+    width: 95%;
+  }
+
+  .carousel-title {
+    font-size: 20px;
+    margin-bottom: 1rem;
+  }
+
+  .carousel-item {
+    height: 250px;
+  }
+
+  .carousel-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 1.2rem;
+  }
+
+  .carousel-btn-prev {
+    left: 5px;
+  }
+
+  .carousel-btn-next {
+    right: 5px;
+  }
+
+  .carousel-dot {
+    width: 10px;
+    height: 10px;
+  }
+
+  .carousel-modal-btn {
+    font-size: 16px;
+    padding: 0.7rem 1.5rem;
+  }
+}
+
+/*
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: #191931;
+  color: #e1e1f1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Outfit", sans-serif;
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+  gap: 1rem;
+}
+
+.bg-text-animation {
+  position: absolute;
+  top: 5rem;
+  font-size: 12rem;
+  text-transform: uppercase;
+  font-weight: 900;
+  -webkit-text-stroke: 2px #2d2d56;
+  -webkit-text-fill-color: transparent;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  z-index: -1;
+  user-select: none;
+}
+
+.my-photo {
+  width: 10rem;
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  object-position: top;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.sosmed i {
+  font-size: 1.5rem;
+  color: #8787a3;
+}
+
+.sosmed i:hover {
+  color: white;
+}
+
+.sosmed a:not(:last-child) {
+  margin-right: 1rem;
+}
+
+ul {
+  width: 80%;
+  max-width: 40rem;
+}
+
+ul li {
+  list-style: none;
+}
+
+ul.links li:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.slogan {
+  text-align: center;
+}
+
+.links {
+  margin-top: 1rem;
+}
+
+.link-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #242442;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 20px;
+  box-shadow: 8px 10px 0 #0f0f25;
+  border: 2px solid #2d2d56;
+}
+
+.link-card:hover {
+  border: 2px solid white;
+}*/
+/*
+.links .link-icon {
+  background-image: linear-gradient(to top, purple, cyan);
+  padding: 0.5rem;
+  border-radius: 10px;
+  aspect-ratio: 1/1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logosgf img{
+  width="50"; 
+  height="50";
+}
+
+.links .link-icon i {
+  color: white;
+}
+
+.links .link-text {
+  text-align: center;
+}
+
+.link-action {
+  color: #8787a3;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.copyright {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: #8787a3;
+  font-size: 0.75rem;
+}
+
+.copyright img {
+  width: 13rem;
+  opacity: 0.4;
+}
+
+#toast {
+  width: max-content;
+  position: fixed;
+  top: 0;
+}
+
+.toast-container {
+  background-color: white;
+  color: #0f0f25;
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 1rem;
+  animation: muncul 300ms ease-in-out;
+}
+
+.toast-gone {
+  animation: hilang 1s ease-in-out 1s;
+}
+
+@keyframes muncul {
+  from {
+    opacity: 0;
+    transform: translateY(-4rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hilang {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+*/
+ 
