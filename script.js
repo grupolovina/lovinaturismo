@@ -63,24 +63,24 @@ document.addEventListener("scroll", (e) => {
 
 const carouselData = {
   "carousel-catamara": [
-    { src: "./public/catamara1.png", link: "https://api.whatsapp.com/send/?phone=5583994086376" },
-    { src: "./public/catamara1.jpeg", link: "https://api.whatsapp.com/send/?phone=5583994086376" },
-    { src: "./public/catamara1.jpeg", link: "https://api.whatsapp.com/send/?phone=5583994086376" },
+    { src: "public/catamara1.png", link: "https://api.whatsapp.com/send/?phone=5583994086376" },
+    { src: "public/catamara1.png", link: "https://api.whatsapp.com/send/?phone=5583994086376" },
+    { src: "public/catamara1.png", link: "https://api.whatsapp.com/send/?phone=5583994086376" },
   ],
   "carousel-lanchas-passeios": [
-    { src: "./public/catamara1.jpeg", link: "https://api.whatsapp.com/send/?phone=5583994086376" },
-    { src: "./public/catamara1.jpeg", link: "https://api.whatsapp.com/send/?phone=5583994086376" },
-    { src: "./public/catamara1.jpeg", link: "https://api.whatsapp.com/send/?phone=5583994086376" },
+    { src: "public/catamara1.png", link: "https://api.whatsapp.com/send/?phone=5583994086376" },
+    { src: "public/catamara1.png", link: "https://api.whatsapp.com/send/?phone=5583994086376" },
+    { src: "public/catamara1.png", link: "https://api.whatsapp.com/send/?phone=5583994086376" },
   ],
   "carousel-embarcacoes": [
-    { src: "./public/catamara1.jpeg", link: "https://api.whatsapp.com/send/?phone=5583994086376" },
-    { src: "./public/catamara1.jpeg", link: "https://api.whatsapp.com/send/?phone=5583994086376" },
-    { src: "./public/catamara1.jpeg", link: "https://api.whatsapp.com/send/?phone=5583994086376" },
+    { src: "public/catamara1.png", link: "https://api.whatsapp.com/send/?phone=5583994086376" },
+    { src: "public/catamara1.png", link: "https://api.whatsapp.com/send/?phone=5583994086376" },
+    { src: "public/catamara1.png", link: "https://api.whatsapp.com/send/?phone=5583994086376" },
   ],
   "carousel-lanchas": [
-    { src: "./public/catamara1.jpeg", link: "https://api.whatsapp.com/send/?phone=5583994086376" },
-    { src: "./public/catamara1.jpeg", link: "https://api.whatsapp.com/send/?phone=5583994086376" },
-    { src: "./public/catamara1.jpeg", link: "https://api.whatsapp.com/send/?phone=5583994086376" },
+    { src: "public/catamara1.png", link: "https://api.whatsapp.com/send/?phone=5583994086376" },
+    { src: "public/catamara1.png", link: "https://api.whatsapp.com/send/?phone=5583994086376" },
+    { src: "public/catamara1.png", link: "https://api.whatsapp.com/send/?phone=5583994086376" },
   ],
 }
 
